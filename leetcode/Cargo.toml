@@ -1,0 +1,12 @@
+[package]
+name = "leetcode"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+automod = "1.0.14"
+clap = { version = "4.5", features = ["derive"] }
+micro_util = { path = "../micro_util" }
+tracing-subscriber = "0.3.18"
+tracing = "0.1.40"
+tracing-unwrap = "1.0.1"
