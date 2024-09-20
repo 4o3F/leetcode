@@ -1,11 +1,10 @@
 use clap::{Parser, Subcommand};
 use micro_util::gen_clap_handler;
 use tracing::Level;
-use tracing_unwrap::{OptionExt, ResultExt};
+use tracing_unwrap::ResultExt;
 mod problems {
     automod::dir!(pub "src/problems");
 }
-
 
 gen_clap_handler!("src/problems");
 

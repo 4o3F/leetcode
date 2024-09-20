@@ -60,7 +60,6 @@ impl Solution {
     }
 }
 
-use tracing_unwrap::OptionExt;
 struct Solution {}
 pub fn array_to_tree(arr: Vec<Option<i32>>) -> Option<Rc<RefCell<TreeNode>>> {
     fn build_tree(arr: &[Option<i32>], index: usize) -> Option<Rc<RefCell<TreeNode>>> {

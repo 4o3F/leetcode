@@ -65,8 +65,6 @@ pub fn array_to_tree(arr: Vec<Option<i32>>) -> Option<Rc<RefCell<TreeNode>>> {
     build_tree(&arr, 0)
 }
 
-use tracing_unwrap::OptionExt;
-
 pub fn run() {
     let root = array_to_tree(vec![
         Some(1),

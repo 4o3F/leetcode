@@ -1,8 +1,6 @@
 struct Solution {}
 use std::i32;
 
-use tracing_unwrap::OptionExt;
-
 impl Solution {
     fn parse_time(time: &String) -> (i32, i32) {
         let mut time = time.split(":");
@@ -24,13 +22,13 @@ impl Solution {
             }
             result = result.min(interval);
         }
-        
+
         result
     }
 }
 
 pub fn run() {
-    let time_points = vec!["00:00","23:59","00:00"];
+    let time_points = vec!["00:00", "23:59", "00:00"];
     let time_points: Vec<String> = time_points.iter().map(|s| s.to_string()).collect();
     tracing::info!("{}", Solution::find_min_difference(time_points));
 }
