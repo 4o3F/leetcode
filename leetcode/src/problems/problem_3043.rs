@@ -45,17 +45,19 @@ impl TrieTree {
         true
     }
 
+    #[allow(dead_code)]
     pub fn ends_with(&self, suffix: &str) -> bool {
         self.ends_with_helper(&self.root, suffix, String::new())
     }
 
+    #[allow(dead_code)]
     fn ends_with_helper(&self, node: &TrieNode, suffix: &str, current_str: String) -> bool {
         if node.is_end && current_str.ends_with(suffix) {
             return true;
         }
 
         for (index, child) in node.children.iter().enumerate() {
-            if let Some(child_node) = child {
+            if let Some(_) = child {
                 let next_str = format!("{}{}", current_str, index);
                 if self.ends_with_helper(node, suffix, next_str) {
                     return true;
