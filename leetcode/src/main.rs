@@ -6,6 +6,8 @@ mod problems {
     automod::dir!(pub "src/problems");
 }
 
+mod utils;
+
 gen_clap_handler!("src/problems");
 
 #[derive(Parser)]
