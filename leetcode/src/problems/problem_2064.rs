@@ -34,40 +34,40 @@ impl PartialEq for Product {
     }
 }
 
-// impl Solution {
-//     pub fn minimized_maximum(n: i32, quantities: Vec<i32>) -> i32 {
-//         let mut max = *quantities.iter().max().unwrap();
-//         let mut heap: BinaryHeap<Product> = BinaryHeap::new();
-//         for &quantity in &quantities {
-//             heap.push(Product {
-//                 store_count: 1,
-//                 quantity,
-//             });
-//         }
-//         let mut store_count = quantities.len() as i32;
-//         while store_count < n {
-//             let mut worst = heap.pop().unwrap();
-//             worst.store_count += 1;
-//             max = worst.max_count();
-//             // tracing::debug!("worst: {:?} max: {}", worst, max);
-//             heap.push(worst);
-//             store_count += 1;
-//         }
-
-//         // tracing::debug!("{:?}", heap);
-//         let worst = heap.pop().unwrap();
-//         max.max(worst.max_count())
-//     }
-// }
-
 impl Solution {
     pub fn minimized_maximum(n: i32, quantities: Vec<i32>) -> i32 {
-        Vec::from_iter(1..100001)
-            .partition_point(|x| n < quantities.iter().map(|&q| 1 + (q - 1) / x).sum())
-            as i32
-            + 1
+        let mut max = *quantities.iter().max().unwrap();
+        let mut heap: BinaryHeap<Product> = BinaryHeap::new();
+        for &quantity in &quantities {
+            heap.push(Product {
+                store_count: 1,
+                quantity,
+            });
+        }
+        let mut store_count = quantities.len() as i32;
+        while store_count < n {
+            let mut worst = heap.pop().unwrap();
+            worst.store_count += 1;
+            max = worst.max_count();
+            // tracing::debug!("worst: {:?} max: {}", worst, max);
+            heap.push(worst);
+            store_count += 1;
+        }
+
+        // tracing::debug!("{:?}", heap);
+        let worst = heap.pop().unwrap();
+        max.max(worst.max_count())
     }
 }
+
+// impl Solution {
+//     pub fn minimized_maximum(n: i32, quantities: Vec<i32>) -> i32 {
+//         Vec::from_iter(1..100001)
+//             .partition_point(|x| n < quantities.iter().map(|&q| 1 + (q - 1) / x).sum())
+//             as i32
+//             + 1
+//     }
+// }
 
 struct Solution {}
 pub fn run() {
