@@ -1,3 +1,6 @@
 [workspace]
 members = ["leetcode", "micro_util"]
 resolver = "2"
+
+[profile.dev]
+opt-level = 0
