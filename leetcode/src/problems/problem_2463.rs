@@ -38,5 +38,5 @@ struct Solution {}
 pub fn run() {
     let robot = vec![0, 4, 6];
     let factory = vec![vec![2, 2], vec![4, 3]];
-    println!("{}", Solution::minimum_total_distance(robot, factory));
+    tracing::info!("{}", Solution::minimum_total_distance(robot, factory));
 }

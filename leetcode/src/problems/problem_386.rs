@@ -19,5 +19,5 @@ impl Solution {
 }
 struct Solution {}
 pub fn run() {
-    println!("{:?}", Solution::lexical_order(13));
+    tracing::info!("{:?}", Solution::lexical_order(13));
 }
