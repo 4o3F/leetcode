@@ -11,3 +11,11 @@ micro_util = { path = "../micro_util" }
 tracing-subscriber = "0.3.18"
 tracing = "0.1.40"
 tracing-unwrap = "1.0.1"
+
+
+[dev-dependencies]
+criterion = { version = "0.5", features = ["html_reports"] }
+
+[[bench]]
+name = "my_benchmark"
+harness = false
