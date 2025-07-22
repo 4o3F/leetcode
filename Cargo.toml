@@ -6,4 +6,10 @@ resolver = "2"
 opt-level = 2
 
 [profile.dev]
-opt-level = 2
+opt-level = 0
+debug = true
+debug-assertions = true
+overflow-checks = true
+lto = false
+incremental = true
+codegen-units = 1
