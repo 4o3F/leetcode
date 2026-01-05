@@ -1,4 +1,4 @@
-use std::{cell::RefCell, rc::Rc};
+use std::{cell::RefCell, collections::VecDeque, rc::Rc};
 
 #[derive(Debug, PartialEq, Eq)]
 pub struct TreeNode {
@@ -19,22 +19,41 @@ impl TreeNode {
 }
 
 pub fn array_to_tree(arr: Vec<Option<i32>>) -> Option<Rc<RefCell<TreeNode>>> {
-    fn build_tree(arr: &[Option<i32>], index: usize) -> Option<Rc<RefCell<TreeNode>>> {
-        if index < arr.len() {
-            if let Some(val) = arr[index] {
-                let node = Rc::new(RefCell::new(TreeNode::new(val)));
-                let left_index = 2 * index + 1; // 左子树索引
-                let right_index = 2 * index + 2; // 右子树索引
-                node.borrow_mut().left = build_tree(arr, left_index);
-                node.borrow_mut().right = build_tree(arr, right_index);
-                Some(node)
-            } else {
-                None
+    if arr.is_empty() || arr[0].is_none() {
+        return None;
+    }
+
+    let root = Rc::new(RefCell::new(TreeNode::new(arr[0].unwrap())));
+    let mut q: VecDeque<Rc<RefCell<TreeNode>>> = VecDeque::new();
+    q.push_back(Rc::clone(&root));
+
+    let mut i = 1;
+    while i < arr.len() {
+        let parent = match q.pop_front() {
+            Some(p) => p,
+            None => break,
+        };
+
+        // left
+        if i < arr.len() {
+            if let Some(v) = arr[i] {
+                let left = Rc::new(RefCell::new(TreeNode::new(v)));
+                parent.borrow_mut().left = Some(Rc::clone(&left));
+                q.push_back(left);
             }
-        } else {
-            None
+            i += 1;
+        }
+
+        // right
+        if i < arr.len() {
+            if let Some(v) = arr[i] {
+                let right = Rc::new(RefCell::new(TreeNode::new(v)));
+                parent.borrow_mut().right = Some(Rc::clone(&right));
+                q.push_back(right);
+            }
+            i += 1;
         }
     }
 
-    build_tree(&arr, 0)
+    Some(root)
 }
