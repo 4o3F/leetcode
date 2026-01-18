@@ -18,7 +18,7 @@ impl Solution {
             *entry += 1;
             max_size = max_size.max(*entry)
         }
-        map.iter().filter(|(_, &v)| v == max_size).count() as i32
+        map.iter().filter(|&(_, &v)| v == max_size).count() as i32
     }
 }
 

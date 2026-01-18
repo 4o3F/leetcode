@@ -9,7 +9,7 @@ impl Solution {
                 freq
             })
             .iter()
-            .filter(|(&key, &value)| key == value)
+            .filter(|&(&key, &value)| key == value)
             .map(|x| *x.0)
             .max()
             .unwrap_or(-1)

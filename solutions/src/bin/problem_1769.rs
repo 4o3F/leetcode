@@ -18,15 +18,14 @@ impl Solution {
 
         suffix.reverse();
 
-        let result = prefix
+        prefix
             .iter()
             .zip(suffix.iter())
             .map(|(a, b)| a + b)
-            .collect::<Vec<i32>>();
+            .collect::<Vec<i32>>()
 
         // tracing::debug!("{:?}", prefix);
         // tracing::debug!("{:?}", suffix);
-        result
     }
 }
 

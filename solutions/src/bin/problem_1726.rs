@@ -10,7 +10,7 @@ impl Solution {
         }
         // tracing::info!("{:?}", freq);
         freq.iter()
-            .filter(|(_, &f)| f > 1)
+            .filter(|&(_, &f)| f > 1)
             .map(|(_, count)| (count * (count - 1) / 2) * 8)
             .sum::<u32>() as i32
     }

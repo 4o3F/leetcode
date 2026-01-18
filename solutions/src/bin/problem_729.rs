@@ -13,16 +13,16 @@ impl MyCalendar {
     }
 
     fn book(&mut self, start: i32, end: i32) -> bool {
-        if let Some((_, &end_time)) = self.time_map.range(..=start).next_back() {
-            if end_time > start {
-                return false;
-            }
+        if let Some((_, &end_time)) = self.time_map.range(..=start).next_back()
+            && end_time > start
+        {
+            return false;
         }
 
-        if let Some((&start_time, _)) = self.time_map.range(start..).next() {
-            if start_time < end {
-                return false;
-            }
+        if let Some((&start_time, _)) = self.time_map.range(start..).next()
+            && start_time < end
+        {
+            return false;
         }
 
         self.time_map.insert(start, end);

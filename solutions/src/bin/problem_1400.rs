@@ -10,7 +10,7 @@ impl Solution {
             })
             .iter()
             .enumerate()
-            .filter(|(_, &f)| f % 2 == 1)
+            .filter(|&(_, &f)| f % 2 == 1)
             .count()
             <= k as usize
     }

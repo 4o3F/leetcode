@@ -19,7 +19,7 @@ impl Solution {
             },
         );
 
-        let result = queries
+        queries
             .into_iter()
             .map(|query| {
                 let mut visited = HashSet::new();
@@ -62,8 +62,7 @@ impl Solution {
                 }
                 -1.0
             })
-            .collect::<Vec<f64>>();
-        result
+            .collect::<Vec<f64>>()
     }
 }
 

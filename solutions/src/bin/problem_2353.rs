@@ -92,10 +92,10 @@ impl FoodRatings {
     }
 
     fn highest_rated(&self, cuisine: String) -> String {
-        if let Some(cuisine_set) = self.cuisine.get(&cuisine) {
-            if let Some(highest) = cuisine_set.iter().last() {
-                return highest.name.clone();
-            }
+        if let Some(cuisine_set) = self.cuisine.get(&cuisine)
+            && let Some(highest) = cuisine_set.iter().last()
+        {
+            return highest.name.clone();
         }
         unreachable!()
     }
