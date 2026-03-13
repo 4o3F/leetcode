@@ -56,8 +56,8 @@ fn main() {
     tracing::info!(
         "{:?}",
         Solution::flip_equiv(
-            utils::tree::array_to_tree(root1),
-            utils::tree::array_to_tree(root2)
+            utils::tree::vec2tree(root1),
+            utils::tree::vec2tree(root2)
         )
     );
 }

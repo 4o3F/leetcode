@@ -26,6 +26,6 @@ struct Solution;
 
 fn main() {
     init_logger();
-    let root = tree::array_to_tree(vec![Some(1), None, Some(2), Some(3)]);
+    let root = tree::vec2tree(vec![Some(1), None, Some(2), Some(3)]);
     tracing::info!("{:?}", Solution::preorder_traversal(root))
 }

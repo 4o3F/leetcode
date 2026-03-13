@@ -1,5 +1,5 @@
 use utils::logger::init_logger;
-use utils::tree::{array_to_tree, TreeNode};
+use utils::tree::{vec2tree, TreeNode};
 
 use std::cell::RefCell;
 use std::collections::VecDeque;
@@ -38,7 +38,7 @@ struct Solution;
 
 fn main() {
     init_logger();
-    let root = array_to_tree(vec![
+    let root = vec2tree(vec![
         Some(5),
         Some(4),
         Some(8),
@@ -54,6 +54,6 @@ fn main() {
         Some(1),
     ]);
     tracing::info!("{}", Solution::has_path_sum(root, 22));
-    let root = array_to_tree(vec![Some(1), Some(2), Some(3)]);
+    let root = vec2tree(vec![Some(1), Some(2), Some(3)]);
     tracing::info!("{}", Solution::has_path_sum(root, 5));
 }

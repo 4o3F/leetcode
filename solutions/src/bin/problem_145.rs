@@ -1,5 +1,5 @@
 use utils::logger::init_logger;
-use utils::tree::{TreeNode, array_to_tree};
+use utils::tree::{TreeNode, vec2tree};
 
 use std::cell::RefCell;
 use std::rc::Rc;
@@ -34,6 +34,6 @@ struct Solution;
 
 fn main() {
     init_logger();
-    let root = array_to_tree(vec![Some(1), None, Some(2), Some(3)]);
+    let root = vec2tree(vec![Some(1), None, Some(2), Some(3)]);
     tracing::info!("{:?}", Solution::postorder_traversal(root))
 }

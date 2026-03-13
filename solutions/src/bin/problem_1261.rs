@@ -42,7 +42,7 @@ impl FindElements {
 fn main() {
     use utils::prelude::*;
     init_logger();
-    let obj = FindElements::new(array_to_tree(vec![Some(-1), None, Some(-1)]));
+    let obj = FindElements::new(vec2tree(vec![Some(-1), None, Some(-1)]));
     tracing::info!("{}", obj.find(1));
     tracing::info!("{}", obj.find(2));
 }

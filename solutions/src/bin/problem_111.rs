@@ -1,5 +1,5 @@
 use utils::logger::init_logger;
-use utils::tree::{array_to_tree, TreeNode};
+use utils::tree::{vec2tree, TreeNode};
 
 use std::cell::RefCell;
 use std::rc::Rc;
@@ -33,7 +33,7 @@ struct Solution;
 
 fn main() {
     init_logger();
-    let tree = array_to_tree(vec![
+    let tree = vec2tree(vec![
         Some(2),
         None,
         Some(3),

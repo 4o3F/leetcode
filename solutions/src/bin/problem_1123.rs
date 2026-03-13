@@ -36,7 +36,7 @@ struct Solution;
 fn main() {
     use utils::prelude::*;
     init_logger();
-    let root = array_to_tree(vec![
+    let root = vec2tree(vec![
         Some(3),
         Some(5),
         Some(1),

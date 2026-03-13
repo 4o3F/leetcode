@@ -47,7 +47,7 @@ struct Solution {}
 fn main() {
     use utils::prelude::*;
     init_logger();
-    let root = utils::tree::array_to_tree(vec![
+    let root = utils::tree::vec2tree(vec![
         Some(1),
         Some(7),
         Some(0),
@@ -57,7 +57,7 @@ fn main() {
         None,
     ]);
     tracing::info!("{}", Solution::max_level_sum(root));
-    let root = utils::tree::array_to_tree(vec![
+    let root = utils::tree::vec2tree(vec![
         Some(1),
         Some(1),
         Some(0),

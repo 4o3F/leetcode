@@ -37,7 +37,7 @@ fn main() {
     init_logger();
     tracing::info!(
         "{:?}",
-        Solution::largest_values(utils::tree::array_to_tree(vec![
+        Solution::largest_values(utils::tree::vec2tree(vec![
             Some(1),
             Some(3),
             Some(2),

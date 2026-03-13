@@ -34,7 +34,7 @@ struct Solution;
 
 fn main() {
     init_logger();
-    let tree = utils::tree::array_to_tree(vec![
+    let tree = utils::tree::vec2tree(vec![
         Some(3),
         Some(9),
         Some(20),

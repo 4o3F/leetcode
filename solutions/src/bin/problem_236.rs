@@ -33,7 +33,7 @@ struct Solution {}
 fn main() {
     use utils::prelude::*;
     init_logger();
-    let root = utils::tree::array_to_tree(vec![
+    let root = utils::tree::vec2tree(vec![
         Some(3),
         Some(5),
         Some(1),
@@ -47,7 +47,7 @@ fn main() {
         Some(4),
     ]);
 
-    let p = utils::tree::array_to_tree(vec![Some(5)]);
-    let q = utils::tree::array_to_tree(vec![Some(1)]);
+    let p = utils::tree::vec2tree(vec![Some(5)]);
+    let q = utils::tree::vec2tree(vec![Some(1)]);
     tracing::info!("{:?}", Solution::lowest_common_ancestor(root, p, q));
 }

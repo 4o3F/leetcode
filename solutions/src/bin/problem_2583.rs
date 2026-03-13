@@ -49,6 +49,6 @@ fn main() {
         .map(Some)
         .collect::<Vec<Option<i32>>>();
 
-    let root = utils::tree::array_to_tree(root);
+    let root = utils::tree::vec2tree(root);
     tracing::info!("{:?}", Solution::kth_largest_level_sum(root, 2));
 }

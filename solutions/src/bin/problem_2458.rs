@@ -113,6 +113,6 @@ fn main() {
         .map(|x| if x == i32::MAX { None } else { Some(x) })
         .collect::<Vec<_>>();
 
-    let tree = utils::tree::array_to_tree(arr);
+    let tree = utils::tree::vec2tree(arr);
     tracing::info!("{:?}", Solution::tree_queries(tree, vec![4]));
 }

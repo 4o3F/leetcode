@@ -18,7 +18,7 @@ impl TreeNode {
     }
 }
 
-pub fn array_to_tree(arr: Vec<Option<i32>>) -> Option<Rc<RefCell<TreeNode>>> {
+pub fn vec2tree(arr: Vec<Option<i32>>) -> Option<Rc<RefCell<TreeNode>>> {
     if arr.is_empty() || arr[0].is_none() {
         return None;
     }
